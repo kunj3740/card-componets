@@ -5,7 +5,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { useRouter } from "next/navigation";
 
-export const Publish = () => {
+const Publish = () => {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [adminId , setAdminId] = useState('');
