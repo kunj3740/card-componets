@@ -9,23 +9,21 @@ const Publish = () => {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [adminId , setAdminId] = useState('');
+
     const navigate = useRouter();
-
-
     useEffect(() => {
         const checkUser = async () => {
           try {
             const response = await axios.get('/api/Admin/getAdmin/');
             if (response.status === 200) {
-                setAdminId(response.data.user.email);
+                setAdminId(response.data.user.userId);
             }
           } catch (error) {
             console.error(error);
           }
         };
         checkUser();
-      }, []);
-
+    }, []);
     return <div className="bg-black min-h-[800px]">
         <Navbar />
         <div className="flex justify-center w-full pt-8"> 

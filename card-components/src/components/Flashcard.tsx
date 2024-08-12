@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 interface FlashcardProps {
   question: string;
   answer: string;
+  flip : boolean;
 }
 
-const Flashcard: React.FC<FlashcardProps> = ({ question, answer }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+const Flashcard: React.FC<FlashcardProps> = ({ question, answer , flip}) => {
+  const [isFlipped , setIsFlipped] = useState(flip);
 
   return (
     <div
