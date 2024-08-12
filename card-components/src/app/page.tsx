@@ -42,23 +42,22 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-black">
       <Navbar />
-      <main className="p-6 flex flex-col items-center">
-        <h1 className="text-3xl font-bold text-white text-center mb-6">Flashcard Viewer</h1>
+      <main className="p-6 flex flex-col items-center mt-10">
+        <h1 className="text-3xl font-bold text-purple-600 text-center mb-6">Guess the Answer and Check it</h1>
         {flashcards.length > 0 && (
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md mt-10">
             <Flashcard
               question={flashcards[currentIndex].question}
               answer={flashcards[currentIndex].answer}
             />
           </div>
         )}
-        <div className="flex justify-between w-full max-w-md mt-6">
-          {/* Conditional rendering for the Previous button */}
+        <div className="flex justify-between w-full max-w-md mt-10">
           {currentIndex > 0 && (
             <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
               onClick={handlePrev}
             >
               &larr; Previous
@@ -67,7 +66,7 @@ const Home: React.FC = () => {
           {/* Conditional rendering for the Next button */}
           {currentIndex < flashcards.length - 1 && (
             <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
               onClick={handleNext}
             >
               Next &rarr;
