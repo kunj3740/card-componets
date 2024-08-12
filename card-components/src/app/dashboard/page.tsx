@@ -56,7 +56,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="h-full bg-black">
+    <div className="h-full bg-black min-h-[800px]">
     <Navbar/>
     <div className="p-6">
       <h1 className="text-3xl text-slate-500 font-bold mb-4 text-center">Admin Dashboard</h1>
@@ -84,7 +84,7 @@ export default function Dashboard() {
             </button>
           </div>
         ))}
-        <div className="h-[700px]"></div>
+        
       </div>
       {isUpdating && editCard && (
         <div className="fixed inset-0  bg-gray-800 bg-opacity-50 flex justify-center items-center">

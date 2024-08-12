@@ -2,6 +2,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import axios from 'axios'; // Make sure axios is installed
+import { cookies } from "next/headers";
 
 interface MyToken {
   name: string;
@@ -52,7 +53,7 @@ export const Navbar = () => {
   };
 
   const handleLogout = async () => {
-
+    const responce = await axios.get("/api/Admin/signout")
     setIsLoggedIn(false);
     setUsername('');
     setIsAdmin(false);
@@ -66,7 +67,7 @@ export const Navbar = () => {
             <img className='rounded h-[30px]' src="../images/articlenew.jpg" alt="" />
           </div>
           <div className="text-2xl text-purple-600">
-            Flash-Card
+            Card-Components
           </div>
         </Link>
         <div className="flex items-center justify-center space-x-4">
