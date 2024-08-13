@@ -87,6 +87,14 @@ export const Auth = ({ type }: AuthProps) => {
           </div>
         </div>
       </div>
+      <div className="flex justify-center flex-col items-center">
+        <p className="text-sm text-slate-500 mt-4">
+                To log in as an admin, use <strong>email: yourname@admin.com</strong> and <strong>password: admin</strong>.
+        </p>
+        <p className="text-sm text-slate-500 mt-4">
+                Note :- only admin can write update delete flashcard.
+        </p>
+      </div>
     </div>
   );
 };

@@ -81,6 +81,14 @@ export const Navbar = () => {
                   New
                 </Link>
               )}
+              {isAdmin && (
+                <Link
+                  href="/dashboard"
+                  className="mr-4 text-black bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition duration-150 ease-in-out"
+                >
+                  Dashboard
+                </Link>
+              )}
               <div className="">
                 <button onClick={toggleDropdown} className="focus:outline-none mb-2">
                   <Avatar size={"big"} name={username} />
@@ -88,16 +96,6 @@ export const Navbar = () => {
                 {dropdownVisible && (
                   <div className="absolute right-0 mt-2 w-48 mr-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-transform transform duration-200 origin-top-right">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                      {isAdmin && (
-                        <Link
-                          href='/dashboard'
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out"
-                          role="menuitem"
-                        >
-                         Dashboard
-                        </Link>
-                      )}
-                      <div className='h-[0.1px] bg-black'></div>
                       <button
                         onClick={handleLogout}
                         className="block w-full text-left px-4 py-2 text-sm text-red-700 hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out"
