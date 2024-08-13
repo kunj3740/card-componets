@@ -61,22 +61,19 @@ export const Navbar = () => {
 
   return (
     <nav className="p-4 w-full shadow-md shadow-purple-800">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between flex-wrap">
         <Link href="/" className="text-black text-xl font-semibold items-center ml-3 flex">
-          <div className='h-[30px] mr-2'>
-            <img className='rounded h-[30px]' src="../images/articlenew.jpg" alt="" />
-          </div>
           <div className="text-2xl text-purple-600">
             Card-Components
           </div>
         </Link>
-        <div className="flex items-center justify-center space-x-4">
+        <div className="flex items-center justify-center space-x-4 mt-4 md:mt-0">
           {isLoggedIn ? (
             <>
               {isAdmin && (
                 <Link
                   href="/publish"
-                  className="mr-4 text-black bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition duration-150 ease-in-out"
+                  className="text-black bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center transition duration-150 ease-in-out"
                 >
                   New
                 </Link>
@@ -84,17 +81,17 @@ export const Navbar = () => {
               {isAdmin && (
                 <Link
                   href="/dashboard"
-                  className="mr-4 text-black bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition duration-150 ease-in-out"
+                  className="text-black bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center transition duration-150 ease-in-out"
                 >
                   Dashboard
                 </Link>
               )}
-              <div className="">
-                <button onClick={toggleDropdown} className="focus:outline-none mb-2">
+              <div className="relative">
+                <button onClick={toggleDropdown} className="focus:outline-none">
                   <Avatar size={"big"} name={username} />
                 </button>
                 {dropdownVisible && (
-                  <div className="absolute right-0 mt-2 w-48 mr-1 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-transform transform duration-200 origin-top-right">
+                  <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-transform transform duration-200 origin-top-right">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                       <button
                         onClick={handleLogout}
@@ -111,7 +108,7 @@ export const Navbar = () => {
           ) : (
             <Link
               href="/signin"
-              className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 transition duration-150 ease-in-out"
+              className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center transition duration-150 ease-in-out"
             >
               Log in
             </Link>
