@@ -61,13 +61,13 @@ export const Navbar = () => {
 
   return (
     <nav className="p-4 w-full shadow-md shadow-purple-800">
-        <div className="ml-10 md:ml-0 container mx-auto flex items-center justify-between flex-wrap md:justify-between">
+        <div className="container mx-auto flex items-center justify-center flex-wrap md:justify-between">
           <Link href="/" className="text-black text-xl font-semibold items-center ml-3 flex">
-            <div className="text-2xl text-purple-600 text-center ml-5 md:ml-0">
+            <div className="text-2xl text-purple-600 text-center">
               Card-Components
             </div>
           </Link>
-          <div className="flex items-center justify-center space-x-4 mt-4 ml-5 md:mt-0 md:ml-0">
+          <div className="flex items-center justify-center space-x-4 mt-4  md:mt-0 ">
             {isLoggedIn ? (
               <>
                 {isAdmin && (
@@ -108,7 +108,7 @@ export const Navbar = () => {
             ) : (
               <Link
                 href="/signin"
-                className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center transition duration-150 ease-in-out"
+                className="text-white ml-14 bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center transition duration-150 ease-in-out mb-2"
               >
                 Log in
               </Link>
